@@ -1,11 +1,11 @@
 import './App.css';
 
-import { Text } from 'components/Text';
+import { Hello } from 'components/Hello';
 
 function App() {
   return (
     <div className="App">
-      <Text><span>Lorem ipsum</span></Text>
+      <Hello name="Patryk" age={36} />
     </div>
   );
 }
