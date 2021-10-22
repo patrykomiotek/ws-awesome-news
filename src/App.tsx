@@ -5,6 +5,7 @@ import type { ChangeEventHandler, MouseEventHandler } from 'react';
 import { Hello } from 'components/Hello';
 import { Button } from 'components/Button';
 import { UserProvider } from 'components/UserContext';
+import { Users } from 'components/Users';
 
 function App() {
   const [age, setAge] = useState<number>(36);
@@ -40,6 +41,7 @@ function App() {
         <div onClick={handleDivClick}>Hello</div>
         <Hello name={name} age={age} />
       </UserProvider>
+      <Users />
     </div>
   );
 }

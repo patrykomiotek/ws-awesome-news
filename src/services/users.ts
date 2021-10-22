@@ -12,7 +12,7 @@ type UserResponseType = {
   email: string;
 }
 
-type UsersResponseType = {
+export type UsersResponseType = {
   results: [UserResponseType]
 }
 
