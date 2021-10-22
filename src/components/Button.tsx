@@ -1,6 +1,8 @@
+import type { MouseEventHandler } from "react";
+
 type ButtonProps = {
   children: string;
-  onClick: React.MouseEventHandler<HTMLButtonElement>;
+  onClick: MouseEventHandler<HTMLButtonElement>;
 }
 
 function Button(props: ButtonProps) {
