@@ -1,7 +1,7 @@
 import { Text } from './Text';
 
 type HelloProps = {
-  readonly name: string;
+  readonly name: string | null;
   readonly age: number;
 }
 

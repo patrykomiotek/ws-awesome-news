@@ -1,10 +1,12 @@
 import './App.css';
 
-import React, { useState } from 'react';
+import { useState } from 'react';
+import type { ChangeEventHandler, MouseEventHandler } from 'react';
 import { Hello } from 'components/Hello';
 
 function App() {
   const [age, setAge] = useState<number>(36);
+  const [name, setName] = useState<string | null>(null); // "" - falsy value
   // React.MouseEvent
   // React.FormEvent
   // React.ChangeEvent
@@ -12,17 +14,21 @@ function App() {
   // React.MouseEventHandler
   // React.FormEventHandler
   // React.ChangeEventHandler
-  const handleClick: React.MouseEventHandler<HTMLButtonElement> = () => {
+  const handleChange: ChangeEventHandler<HTMLInputElement> = (event) => {
+    setName(event.target.value);
+  }
+  const handleClick: MouseEventHandler<HTMLButtonElement> = () => {
     setAge((age) => age + 1);
   }
-  const handleDivClick: React.MouseEventHandler<HTMLDivElement> = () => {
+  const handleDivClick: MouseEventHandler<HTMLDivElement> = () => {
     setAge((age) => age + 1);
   }
   return (
     <div className="App">
+      <input type="text" onChange={handleChange} />
       <button onClick={handleClick}>+</button>
       <div onClick={handleDivClick}>Hello</div>
-      <Hello name="Patryk" age={age} />
+      <Hello name={name} age={age} />
     </div>
   );
 }
