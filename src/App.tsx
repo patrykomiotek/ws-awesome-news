@@ -3,6 +3,7 @@ import './App.css';
 import { useState } from 'react';
 import type { ChangeEventHandler, MouseEventHandler } from 'react';
 import { Hello } from 'components/Hello';
+import { Button } from 'components/Button';
 
 function App() {
   const [age, setAge] = useState<number>(36);
@@ -26,7 +27,7 @@ function App() {
   return (
     <div className="App">
       <input type="text" onChange={handleChange} />
-      <button onClick={handleClick}>+</button>
+      <Button onClick={handleClick}>+</Button>
       <div onClick={handleDivClick}>Hello</div>
       <Hello name={name} age={age} />
     </div>
